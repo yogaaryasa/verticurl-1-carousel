@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verticurl - Carousel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        .carousel-container {
+            width: 100%;
+            height: 650px;
+            overflow: hidden;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            flex: 1;
+            /* margin-bottom: 20px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item {
+            position: absolute;
+            padding: 0 0px;
+            box-sizing: border-box;
+            overflow: hidden;
+            width: 90%;
+            max-width: 500px;
+            height: 300px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+            background-color: #ffffff;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateX(20%) scale(0.6);
+            z-index: 0;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .header-container {
+            width: 100%;
+            height: 100px;
+            background-color: #c00;
+            padding: 20px 0 0;
+        }
+
+        .header-container h1,
+        .header-container p {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .header-container h1 {
+            margin-bottom: 10px;
+        }
+
+        .content-item {
+            padding: 30px 60px 30px;
+        }
+
+        .content-item img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .content-item p {
+            margin: 0;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+        .carousel-btn-container {
+            width: 65%;
+            height: 50px;
+            position: absolute;
+            /* position: relative; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: auto;
+            bottom: 60px;
+        }
+
+        .carousel-button {
+            /* position: absolute; */
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(217, 217, 217, 0.5);
+            box-shadow: -2px 2px 10px rgba(86, 86, 86, 0.5);
+            color: #4a2121;
+            border: none;
+            padding: 8px 14px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        /* .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        } */
+
+        .dots {
+            text-align: center;
+            margin: 15px 0;
+            flex-shrink: 0;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background-color: #c00;
+            width: 50px;
+            border-radius: 50px;
+        }
+
+        /* Tablet */
+        @media (min-width: 600px) {
+            .carousel-item {
+                /* padding: 30px; */
+                min-height: 300px;
+            }
+
+            .dot.active {
+                width: 70px;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 992px) {
+            .carousel-item {
+                max-width: 600px;
+                height: auto;
+            }
+
+            .dot.active {
+                width: 100px;
+            }
+
+            .carousel-button {
+                padding: 15px 25px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <div class="header-container">
+                    <h1>STEP 1:</h1>
+                    <p>Patient takes the Oral Health Assessment</p>
+                </div>
+                <div class="content-item">
+                    <img src="https://placehold.co/500x300">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua.</p>
+                </div>
+
+
+            </div>
+            <div class="carousel-item">
+                <div class="header-container">
+                    <h1>STEP 2:</h1>
+                    <p>Patient Receives Dental Score</p>
+                </div>
+                <div class="content-item">
+                    <img src="https://placehold.co/500x300">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua.</p>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="header-container">
+                    <h1>STEP 3:</h1>
+                    <p>Geolocated Dentist Referral</p>
+                </div>
+                <div class="content-item">
+                    <img src="https://placehold.co/500x300">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua.</p>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="header-container">
+                    <h1>STEP 4:</h1>
+                    <p>Geolocated Dentist Referral</p>
+                </div>
+                <div class="content-item">
+                    <img src="https://placehold.co/500x300">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="carousel-btn-container">
+            <button class="carousel-button prev">&#10094;</button>
+            <button class="carousel-button next">&#10095;</button>
+        </div>
+
+        <div class="dots"></div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll(".carousel-item");
+        const prevButton = document.querySelector(".carousel-button.prev");
+        const nextButton = document.querySelector(".carousel-button.next");
+        const dotsContainer = document.querySelector(".dots");
+        let currentIndex = 0;
+
+        // generate dots
+        items.forEach((_, i) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            dot.addEventListener("click", () => {
+                currentIndex = i;
+                updateCarousel();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        function updateCarousel() {
+            items.forEach(item => {
+                item.style.opacity = "0";
+                item.style.transform = "translateX(20%) scale(0.6)";
+                item.style.zIndex = "0";
+            });
+
+            const current = items[currentIndex];
+            current.style.opacity = "1";
+            current.style.transform = "translateX(0) scale(1)";
+            current.style.zIndex = "1";
+
+            const prev = items[(currentIndex - 1 + items.length) % items.length];
+            prev.style.opacity = "0.4";
+            prev.style.transform = "translateX(-70%) scale(0.6)";
+
+            const next = items[(currentIndex + 1) % items.length];
+            next.style.opacity = "0.4";
+            next.style.transform = "translateX(70%) scale(0.6)";
+            next.style.zIndex = "0";
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentIndex);
+            });
+        }
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        });
+
+        updateCarousel();
+    </script>
+</body>
+
+</html>
